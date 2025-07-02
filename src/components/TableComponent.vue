@@ -7,8 +7,8 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th @click="sortBy('birthDate')">Fecha de Nacimiento <button>Ordenar</button> </th>
-                <th @click="sortBy('createdAt')">Fecha de Creación <button>Ordenar</button> </th>
+                <th @click="sortBy('birthDate')">Fecha de Nacimiento <button class="button">Ordenar mayor-menor</button> </th>
+                <th @click="sortBy('createdAt')">Fecha de Creación <button class="button">Ordenar mayor-menor</button> </th>
                 <th>Cargo</th>
             </tr>
         </thead>
@@ -87,7 +87,7 @@ th, td {
     padding: 8px;
 }
 th {
-    background-color: #e1e5ea;
+    background-color: #e8f2ff;
     text-align: left;
 }
 tr:nth-child(even) {
@@ -101,6 +101,22 @@ tr:hover {
     text-align: left;
     font-size: 0.9em;
     color: #424040;
+}
+.button {
+    background-color: #acc8e9d2;
+    color: rgb(4, 4, 5);
+    border-color: #6b7c90d2;
+    padding: 3px 6px;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+.button:hover {
+    background-color: #8fabc9;
+}
+.button:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(53, 77, 103, 0.5);
 }
 
 </style>
