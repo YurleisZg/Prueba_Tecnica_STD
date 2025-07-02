@@ -1,6 +1,6 @@
 <template>
 <div class="scoped">
-    <form @submit.prevent="saveUser">
+    <form @submit.prevent="saveNewUser">
         <input type="number" v-model="newUser.id" placeholder="Identificación" required />
         <input type="text" v-model="newUser.name" placeholder="Nombre" required />
         <input type="email" v-model="newUser.email" placeholder="Correo Electrónico" required />
@@ -15,7 +15,7 @@
 <script lang="ts" setup>
 import { ref } from 'vue';
 import type { User } from '../models/user';
-import userData from '../data/users.json';
+import { saveUser } from '../services/userService';
 
 const newUser = ref<User>({
     id: 0,
@@ -27,9 +27,10 @@ const newUser = ref<User>({
 });
 
 
-const saveUser = () => {
-    userData.push(newUser.value);
+const saveNewUser = () => {
+    saveUser(newUser.value);
     alert('Usuario guardado exitosamente');
+    location.reload();
 };
 </script>
 
