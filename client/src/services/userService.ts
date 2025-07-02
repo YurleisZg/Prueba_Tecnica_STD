@@ -1,18 +1,19 @@
-import userData from '../data/users.json';
 import type { User } from '../models/user';
 
-const storagekey = 'users-data';
 
-export const getUsers = (): User[] => {
-    const storedUsers = localStorage.getItem(storagekey);
-    if (storedUsers) {
-        return JSON.parse(storedUsers)
-    }   
-    return userData;
+export const getUsers = async () => {
+  const res = await fetch('/api/users');
+  if (!res.ok) throw new Error('Error fetching users');
+  return res.json();
 };
 
-export const saveUser = (user: User): void => {
-    const users = getUsers();
-    users.push(user);
-    localStorage.setItem(storagekey, JSON.stringify(users));
+export const saveUser = async (user: User) => {
+  const res = await fetch('/api/users', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(user),
+  });
+
+  if (!res.ok) throw new Error('Error saving user');
+  return res.json();
 };
