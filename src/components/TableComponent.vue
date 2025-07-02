@@ -76,6 +76,41 @@ const filteredUsers = computed(() => {
     padding: 80px;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .scoped {
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 14px;
+    }
+    
+    th, td {
+        padding: 6px 4px;
+        white-space: nowrap;
+    }
+    
+    .button {
+        padding: 2px 4px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scoped {
+        padding: 10px;
+    }
+    
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 4px 2px;
+    }
 }   
 
 table {

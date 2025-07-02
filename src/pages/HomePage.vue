@@ -1,6 +1,6 @@
 <template>
     <div class="scoped">
-        <h1 class="title">Bienvenido</h1>
+        <h1 class="title">Bienvenido!</h1>
         <p class="description">Aquí puedes ver la lista de usuarios y agregar nuevos.</p>
         <TableComponent />
         <div class="button-container">
@@ -44,7 +44,7 @@ const gotoNewUser = () => {
 }
 button {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #104ac8;;
     color: white;
     border: none;
     border-radius: 5px;
