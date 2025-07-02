@@ -37,7 +37,7 @@ const users = ref<User[]>([]);
 
 <style >  
 .scoped {
-    padding: 30px;
+    padding: 80px;
     font-family: Arial, sans-serif;
     background-color: #f9f9f9;
 }   
