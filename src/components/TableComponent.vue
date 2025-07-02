@@ -9,8 +9,8 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th @click="sortBy('birthDate')">Fecha de Nacimiento</th>
-                <th @click="sortBy('createdAt')">Fecha de Creación</th>
+                <th @click="sortBy('birthDate')">Fecha de Nacimiento <button>Ordenar</button> </th>
+                <th @click="sortBy('createdAt')">Fecha de Creación <button>Ordenar</button> </th>
                 <th>Cargo</th>
             </tr>
         </thead>
@@ -27,6 +27,8 @@
     </table>
         <p v-if="users.length === 0">No hay usuarios disponibles.</p>
         <p v-else>Total de usuarios: {{ users.length }}</p>
+
+        <button>Agregar Nuevo Usuario</button>
     </div>
 </template>
 
