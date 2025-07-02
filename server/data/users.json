@@ -4,7 +4,7 @@
         "name": "Juan Perez",
         "email": "juan.perez@example.com",
         "birthDate": "2004-09-10",
-        "createdAt": "2025-06-30", 
+        "createdAt": "2025-06-30",
         "role": "admin"
     },
     {
@@ -14,5 +14,13 @@
         "birthDate": "2003-05-15",
         "createdAt": "2025-06-30",
         "role": "user"
+    },
+    {
+        "id": 3,
+        "name": "Yurlei",
+        "email": "yo@example.com",
+        "birthDate": "1998-06-12",
+        "createdAt": "2025-07-05",
+        "role": "Profesor"
     }
 ]
