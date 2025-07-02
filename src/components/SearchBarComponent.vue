@@ -1,15 +1,44 @@
 <template>
 <div class="search-bar">
-        <input id="search" v-model="search" placeholder="Buscar por nombre" />
+        <input id="search" :placeholder="placeholder" v-model="internalValue" @input="updateSearch" />
     </div>
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, watch, defineEmits, defineProps } from 'vue';
 
-const search = ref('');
+const props = defineProps({
+  modelValue: {
+    type: String,
+    default: ''
+  },
+  placeholder: {
+    type: String,
+    default: 'Buscar por nombre'
+  }
+});
 
+const emit = defineEmits(['update:modelValue']);
+const internalValue = ref(props.modelValue);
+
+watch(() => props.modelValue, (val) => {
+  internalValue.value = val;
+});
+
+const updateSearch = () => {
+  emit('update:modelValue', internalValue.value);
+};
 </script>
 
 <style scoped>
+.search-bar {
+    margin-bottom: 20px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;   
+    box-sizing: border-box;
+}
 </style>
