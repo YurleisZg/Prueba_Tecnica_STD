@@ -154,4 +154,58 @@ tr:hover {
     float: right;
 }
 
+@media (max-width: 768px) {
+    .scoped {
+        padding: 20px;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+    
+    th, td {
+        padding: 8px 4px;
+        font-size: 0.8em;
+    }
+    
+    .button {
+        padding: 3px 6px;
+        font-size: 0.8em;
+    }
+    
+    .button-clear {
+        padding: 3px 8px;
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    .scoped {
+        padding: 10px;
+    }
+    
+    table {
+        font-size: 0.8em;
+    }
+    
+    th, td {
+        padding: 6px 2px;
+        font-size: 0.7em;
+    }
+    
+    .button {
+        padding: 2px 4px;
+        font-size: 0.7em;
+    }
+    
+    .button-clear {
+        padding: 2px 6px;
+        font-size: 0.7em;
+    }
+    
+    .table-footer {
+        font-size: 0.8em;
+    }
+}
+
 </style>
