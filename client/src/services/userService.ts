@@ -15,6 +15,14 @@ export const saveUser = async (user: User) => {
     body: JSON.stringify(user),
   });
 
-  if (!res.ok) throw new Error('Error saving user');
+   if (res.status === 409) {
+    const error = await res.json();
+    throw new Error(error.error || 'ID duplicado');
+  }
+
+  if (!res.ok) {
+    throw new Error('Error al guardar el usuario');
+  }
+
   return res.json();
 };

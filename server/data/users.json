@@ -8,22 +8,6 @@
         "role": "Desarrollador Sr"
     },
     {
-        "id": "2",
-        "name": "Maria Lopez",
-        "email": "maria.lopez@example.com",
-        "birthDate": "2003-05-15",
-        "createdAt": "2025-06-30",
-        "role": "Desarrollador Jr"
-    },
-    {
-        "id": 3,
-        "name": "Juana Socorro",
-        "email": "yo@example.com",
-        "birthDate": "1998-06-12",
-        "createdAt": "2025-07-05",
-        "role": "Profesor"
-    },
-    {
         "id": 4,
         "name": "yo1",
         "email": "alguien@example.com",
