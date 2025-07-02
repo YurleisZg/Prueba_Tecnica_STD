@@ -1,6 +1,7 @@
 <template>
     <div class="scoped">
         <SearchBarComponent v-model="search"/>
+
         <table>
         <thead>
             <tr>
@@ -27,7 +28,9 @@
                 <td colspan="6" class="table-footer">Total Usuarios: {{ filteredUsers.length }}</td>
             </tr>
             <tr>
-                <td v-if="sortField" colspan="6" class="table-footer">Ordenado por: {{ fieldDisplayName(sortField) }} ({{ ascending ? 'Mayor a menor' : 'Menor a mayor' }})</td>
+                <td v-if="sortField" colspan="6" class="table-footer">Ordenado por: {{ fieldDisplayName(sortField) }} ({{ ascending ? 'Mayor a menor' : 'Menor a mayor' }})
+                <button class="button-clear" @click="clearSort" v-if="sortField">Eliminar Filtro</button>
+                </td>
             </tr>
         </tfoot>
     </table>
@@ -86,6 +89,11 @@ const fieldDisplayName = (field: string) => {
     }
 };
 
+const clearSort = () => {
+    sortField.value = '';
+    ascending.value = true;
+    users.value = getUsers(); 
+};
 </script>
 
 <style >  
@@ -131,6 +139,19 @@ tr:hover {
 }
 .button:hover {
     background-color: #f1f3f6;
+}
+
+.button-clear {
+    background-color: #f2f2f2d2;
+    font-family: Arial, Helvetica, sans-serif;
+    border-color: #f6f5f5d2;
+    color: #ae2519;
+    font-size: 1em;
+    padding: 5px 12px;
+    padding-top: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+    float: right;
 }
 
 </style>
