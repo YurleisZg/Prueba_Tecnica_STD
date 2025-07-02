@@ -7,9 +7,9 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th @click="sortBy('birthDate')">Fecha de Nacimiento </th>
-                <th @click="sortBy('createdAt')">Fecha de Creación </th>
-                <th @click="sortBy('role')">Cargo</th>
+                <th>Fecha de Nacimiento <button class="button" @click.stop="sortBy('birthDate')">Ordenar mayor-menor</button></th>
+                <th>Fecha de Creación <button class="button" @click.stop="sortBy('createdAt')">Ordenar mayor-menor</button></th>
+                <th>Cargo <button class="button" @click.stop="sortBy('role')">Ordenar mayor-menor</button></th>
             </tr>
         </thead>
         <tbody>
@@ -22,11 +22,12 @@
                 <td>{{ user.role }}</td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="6" class="table-footer">Total Usuarios: {{ filteredUsers.length }}</td>
+            </tr>
+        </tfoot>
     </table>
-        <div class="table-footer">
-            <p v-if="users.length === 0">No hay usuarios disponibles.</p>
-            <p v-else>Total: {{ users.length }}</p>
-        </div>
     </div>
 </template>
 
@@ -84,10 +85,11 @@ table {
 }
 th, td {
     border: 1px solid #d6cbcb;
-    padding: 10px;
+    padding: 12px;
 }
 th {
     background-color: #e7eaec;
+    padding: 10px;
     text-align: left;
 }
 tr:nth-child(even) {
@@ -100,7 +102,7 @@ tr:hover {
     margin-top: 20px;
     text-align: left;
     font-size: 0.9em;
-    color: #424040;
+    color: #1a1919;
 }
 .button {
     background-color: #d2d3d4d2;
