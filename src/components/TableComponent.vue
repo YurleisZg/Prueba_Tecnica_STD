@@ -1,6 +1,8 @@
 <template>
     <div class="scoped">
-        <input  v-model="search" placeholder="Buscar usuarios..." />
+       <div class="search-bar">
+           <input id="search" v-model="search" placeholder="Buscar por nombre" />
+       </div>
         <table>
         <thead>
             <tr>
@@ -95,4 +97,14 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 } 
+.search-bar {
+    margin-bottom: 20px;
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;   
+    box-sizing: border-box;
+}
 </style>
