@@ -3,18 +3,19 @@
     <button @click="$router.push('/')" class="back-button">Regresar</button>
     <h1 class="title">Agregar Nuevo Usuario</h1>
     <p class="description">Por favor, complete el siguiente formulario para agregar un nuevo usuario.</p>
+
     <form @submit.prevent="saveNewUser">
-        <label for="id">Identificación:</label>
+        <label for="id">Identificación</label>
         <input type="number" v-model="newUser.id" placeholder="Identificación" required/>
-        <label for="name">Nombre:</label>
+        <label for="name">Nombre</label>
         <input type="text" v-model="newUser.name" placeholder="Nombre" required />
-        <label for="email">Correo Electrónico:</label>
+        <label for="email">Correo Electrónico</label>
         <input type="email" v-model="newUser.email" placeholder="Correo Electrónico" required />
-        <label for="birthDate">Fecha de Nacimiento:</label>
+        <label for="birthDate">Fecha de Nacimiento</label>
         <input type="date" v-model="newUser.birthDate" placeholder="Fecha de Nacimiento" required />
-        <label for="createdAt">Fecha de Creación:</label>
+        <label for="createdAt">Fecha de Creación</label>
         <input type="date" v-model="newUser.createdAt" placeholder="Fecha de Creación" required />
-        <label for="role">Cargo:</label>
+        <label for="role">Cargo</label>
         <input type="text" v-model="newUser.role" placeholder="Cargo" required />
         <button type="submit">Guardar Usuario</button>
     </form>
@@ -57,6 +58,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+    margin-bottom: 6px;
 }
 button {
     padding: 10px;
