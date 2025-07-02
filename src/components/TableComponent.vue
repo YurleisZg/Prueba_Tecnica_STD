@@ -6,8 +6,8 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th>Fecha de Nacimiento</th>
-                <th>Fecha de Creación</th>
+                <th @click="sortBy('birthDate')">Fecha de Nacimiento</th>
+                <th @click="sortBy('createdAt')">Fecha de Creación</th>
                 <th>Cargo</th>
             </tr>
         </thead>
@@ -33,6 +33,27 @@ import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
 
 const users = ref<User[]>([]);
+
+const sortField = ref<string>('');
+const ascending = ref<boolean>(true);
+
+const sortBy = (field: string) => {
+    if (sortField.value === field) {
+        ascending.value = !ascending.value;
+    } else {
+        sortField.value = field;
+        ascending.value = true;
+    }
+
+    users.value.sort((a, b) => {
+        const aValue = a[field as keyof User];
+        const bValue = b[field as keyof User];
+
+        return ascending.value
+            ? aValue > bValue ? 1 : -1
+            : aValue < bValue ? 1 : -1;
+    });
+};
 
 onMounted(() =>{
     users.value = getUsers();
