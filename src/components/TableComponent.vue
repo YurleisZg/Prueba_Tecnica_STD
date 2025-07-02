@@ -23,8 +23,10 @@
             </tr>
         </tbody>
     </table>
-        <p v-if="users.length === 0">No hay usuarios disponibles.</p>
-        <p v-else>Total de usuarios: {{ users.length }}</p>
+        <div class="table-footer">
+            <p v-if="users.length === 0">No hay usuarios disponibles.</p>
+            <p v-else>Total: {{ users.length }}</p>
+        </div>
     </div>
 </template>
 
@@ -81,11 +83,11 @@ table {
     border-collapse: collapse;
 }
 th, td {
-    border: 1px solid #ddd;
+    border: 1px solid #d6cbcb;
     padding: 8px;
 }
 th {
-    background-color: #f2f2f2;
+    background-color: #e1e5ea;
     text-align: left;
 }
 tr:nth-child(even) {
@@ -94,5 +96,11 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 } 
+.table-footer {
+    margin-top: 20px;
+    text-align: left;
+    font-size: 0.9em;
+    color: #424040;
+}
 
 </style>
