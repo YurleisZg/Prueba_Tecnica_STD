@@ -27,6 +27,7 @@ const gotoNewUser = () => {
     border-radius: 8px;
     max-width: 1100px;
     margin: auto;
+    overflow-x: auto;
 }
 .title {
     font-size: 2em;

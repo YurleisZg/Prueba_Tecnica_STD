@@ -51,16 +51,7 @@ const saveNewUser = () => {
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
-
-    @media (max-width: 768px) {
-        margin: 10px;
-        padding: 15px;
-    }
-    
-    @media (max-width: 480px) {
-        margin: 5px;
-        padding: 10px;
-    }
+    overflow-x: auto;
 }
 
 form {
