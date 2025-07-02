@@ -14,13 +14,5 @@
         "birthDate": "2003-05-15",
         "createdAt": "2025-06-30",
         "role": "user"
-    },  
-    {
-        "id": "3",
-        "name": "Carlos Gomez",
-        "email": "carlos.gomez@example.com",
-        "birthDate": "2002-03-22",
-        "createdAt": "2025-06-30",
-        "role": "user"
     }
 ]

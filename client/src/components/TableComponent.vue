@@ -39,9 +39,9 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, computed } from 'vue';
-import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
 import SearchBarComponent from './SearchBarComponent.vue';
+import type { User } from '../models/user';
 
 const users = ref<User[]>([]);
 const sortField = ref<string>('');
@@ -57,8 +57,8 @@ const sortBy = (field: string) => {
     }
 
     users.value.sort((a, b) => {
-        const aValue = a[field as keyof User];
-        const bValue = b[field as keyof User];
+        const aValue = a[field as keyof typeof users.value[0]];
+        const bValue = b[field as keyof typeof users.value[0]];
 
         return ascending.value
             ? aValue > bValue ? 1 : -1
@@ -66,8 +66,17 @@ const sortBy = (field: string) => {
     });
 };
 
+const fetchUsers = async () => {
+    try {
+        const response = await getUsers();
+        users.value = response;
+    } catch (error) {
+        console.error('Error fetching users:', error);
+    }
+};
+
 onMounted(() =>{
-    users.value = getUsers();
+    fetchUsers();
 })
 
 const filteredUsers = computed(() => {
@@ -92,7 +101,7 @@ const fieldDisplayName = (field: string) => {
 const clearSort = () => {
     sortField.value = '';
     ascending.value = true;
-    users.value = getUsers(); 
+    fetchUsers(); 
 };
 </script>
 
