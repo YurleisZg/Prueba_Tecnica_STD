@@ -27,7 +27,7 @@
                 <td colspan="6" class="table-footer">Total Usuarios: {{ filteredUsers.length }}</td>
             </tr>
             <tr>
-                <td v-if="sortField" colspan="6" class="table-footer">Ordenado por: {{ sortField }} ({{ ascending ? 'Mayor a menor' : 'Menor a mayor' }})</td>
+                <td v-if="sortField" colspan="6" class="table-footer">Ordenado por: {{ fieldDisplayName(sortField) }} ({{ ascending ? 'Mayor a menor' : 'Menor a mayor' }})</td>
             </tr>
         </tfoot>
     </table>
@@ -72,6 +72,19 @@ const filteredUsers = computed(() => {
         user.name.toLowerCase().includes(search.value.toLowerCase()) 
     );
 });
+
+const fieldDisplayName = (field: string) => {
+    switch (field) {
+        case 'birthDate':
+            return 'Fecha de Nacimiento';
+        case 'createdAt':
+            return 'Fecha de Creación';
+        case 'role':
+            return 'Cargo';
+        default:
+            return field.charAt(0).toUpperCase() + field.slice(1);
+    }
+};
 
 </script>
 
