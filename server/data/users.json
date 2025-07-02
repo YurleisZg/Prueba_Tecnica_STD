@@ -5,7 +5,7 @@
         "email": "juan.perez@example.com",
         "birthDate": "2004-09-10",
         "createdAt": "2025-06-30",
-        "role": "admin"
+        "role": "Desarrollador Sr"
     },
     {
         "id": "2",
@@ -13,11 +13,11 @@
         "email": "maria.lopez@example.com",
         "birthDate": "2003-05-15",
         "createdAt": "2025-06-30",
-        "role": "user"
+        "role": "Desarrollador Jr"
     },
     {
         "id": 3,
-        "name": "Yurlei",
+        "name": "Juana Socorro",
         "email": "yo@example.com",
         "birthDate": "1998-06-12",
         "createdAt": "2025-07-05",
