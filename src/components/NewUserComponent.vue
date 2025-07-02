@@ -10,7 +10,7 @@
         <label for="name">Nombre</label>
         <input type="text" v-model="newUser.name" placeholder="Nombre" required />
         <label for="email">Correo Electrónico</label>
-        <input type="email" v-model="newUser.email" placeholder="Correo Electrónico" required />
+        <input type="email" v-model="newUser.email" placeholder="alguien@example.com" required />
         <label for="birthDate">Fecha de Nacimiento</label>
         <input type="date" v-model="newUser.birthDate" placeholder="Fecha de Nacimiento" required />
         <label for="createdAt">Fecha de Creación</label>
@@ -47,7 +47,22 @@ const saveNewUser = () => {
 <style scoped>
 .scoped {
     margin: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+
+    @media (max-width: 768px) {
+        margin: 10px;
+        padding: 15px;
+    }
+    
+    @media (max-width: 480px) {
+        margin: 5px;
+        padding: 10px;
+    }
 }
+
 form {
     display: flex;
     flex-direction: column;
@@ -72,18 +87,22 @@ button {
     font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 .description {
     text-align: center;
     margin-bottom: 20px;
 }
 .back-button {
-    background-color: #dadde3;
-    color: #0c0c0c;
+    background-color: #fafafa;
+    color: #0d398a;
+    font-weight: bold;
     border: none;
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
     margin-bottom: 20px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
 }
 </style>
