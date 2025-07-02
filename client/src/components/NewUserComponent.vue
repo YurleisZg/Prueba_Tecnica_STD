@@ -84,7 +84,7 @@ button {
 .description {
     text-align: center;
     margin-bottom: 20px;
-    color:#242222;
+    color:#1d1d1d;
 }
 .back-button {
     background-color: #fafafa;
