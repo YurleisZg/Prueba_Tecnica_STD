@@ -14,9 +14,13 @@ class UserController {
     public function saveUser($newUser) {
         $users = json_decode(file_get_contents($this->dataFile), true);
 
-        $newUser['id'] = count($users) ? $users[count($users) - 1]['id'] + 1 : 1;
-        $newUser['createdAt'] = date('Y-m-d');
-
+         foreach ($users as $user) {
+        if ($user['id'] == $newUser['id']) {
+            http_response_code(400);
+            echo json_encode(['error' => 'ID ya existe']);
+            exit;
+        }
+    }
         $users[] = $newUser;
 
         file_put_contents($this->dataFile, json_encode($users, JSON_PRETTY_PRINT));

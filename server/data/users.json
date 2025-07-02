@@ -22,5 +22,21 @@
         "birthDate": "1998-06-12",
         "createdAt": "2025-07-05",
         "role": "Profesor"
+    },
+    {
+        "id": 4,
+        "name": "yo1",
+        "email": "alguien@example.com",
+        "birthDate": "2003-09-10",
+        "createdAt": "2025-07-02",
+        "role": "Jefe"
+    },
+    {
+        "id": "716616262",
+        "name": "Juana",
+        "email": "yurleis@gmail.com",
+        "birthDate": "1998-05-12",
+        "createdAt": "2025-08-25",
+        "role": "Jefe"
     }
 ]
