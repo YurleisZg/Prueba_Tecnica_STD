@@ -1,5 +1,6 @@
 <template>
     <div class="scoped">
+        <input  v-model="search" placeholder="Buscar usuarios..." />
         <table>
         <thead>
             <tr>
@@ -28,14 +29,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, watch } from 'vue';
 import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
 
 const users = ref<User[]>([]);
-
 const sortField = ref<string>('');
 const ascending = ref<boolean>(true);
+const search = ref('');
 
 const sortBy = (field: string) => {
     if (sortField.value === field) {
@@ -54,6 +55,14 @@ const sortBy = (field: string) => {
             : aValue < bValue ? 1 : -1;
     });
 };
+
+const allUsers = getUsers();
+
+watch(search, val => {
+    users.value = allUsers.filter(user => 
+        user.name.toLowerCase().includes(val.toLowerCase()) 
+    );
+})
 
 onMounted(() =>{
     users.value = getUsers();
