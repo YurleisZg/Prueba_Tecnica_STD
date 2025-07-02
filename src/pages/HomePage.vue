@@ -25,7 +25,7 @@ const gotoNewUser = () => {
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 8px;
-    max-width: 800px;
+    max-width: 1000px;
     margin: auto;
 }
 .title {
@@ -40,8 +40,7 @@ const gotoNewUser = () => {
 }
 
 .button-container {
-    text-align: center;
-    margin-top: 20px;
+    text-align: right;
 }
 button {
     padding: 10px 20px;
