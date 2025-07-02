@@ -1,6 +1,6 @@
 <template>
     <div class="scoped">
-        <SearchBarComponent />
+        <SearchBarComponent v-model="search"/>
         <table>
         <thead>
             <tr>
@@ -13,7 +13,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr v-for="(user, index) in users" :key="index">
+            <tr v-for="user in filteredUsers" :key="user.id">
                 <td>{{ user.id }}</td>
                 <td>{{ user.name }}</td>
                 <td>{{ user.email }}</td>
@@ -31,7 +31,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted} from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
 import SearchBarComponent from './SearchBarComponent.vue';
@@ -39,6 +39,7 @@ import SearchBarComponent from './SearchBarComponent.vue';
 const users = ref<User[]>([]);
 const sortField = ref<string>('');
 const ascending = ref<boolean>(true);
+const search = ref('');
 
 const sortBy = (field: string) => {
     if (sortField.value === field) {
@@ -58,10 +59,15 @@ const sortBy = (field: string) => {
     });
 };
 
-
 onMounted(() =>{
     users.value = getUsers();
 })
+
+const filteredUsers = computed(() => {
+    return users.value.filter(user => 
+        user.name.toLowerCase().includes(search.value.toLowerCase()) 
+    );
+});
 
 </script>
 
