@@ -1,5 +1,6 @@
 <template>
     <div class="scoped">
+        <SearchBarComponent />
         <table>
         <thead>
             <tr>
@@ -30,14 +31,14 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, watch } from 'vue';
+import { ref, onMounted} from 'vue';
 import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
+import SearchBarComponent from './SearchBarComponent.vue';
 
 const users = ref<User[]>([]);
 const sortField = ref<string>('');
 const ascending = ref<boolean>(true);
-const search = ref('');
 
 const sortBy = (field: string) => {
     if (sortField.value === field) {
@@ -57,13 +58,6 @@ const sortBy = (field: string) => {
     });
 };
 
-const allUsers = getUsers();
-
-watch(search, val => {
-    users.value = allUsers.filter(user => 
-        user.name.toLowerCase().includes(val.toLowerCase()) 
-    );
-})
 
 onMounted(() =>{
     users.value = getUsers();
@@ -96,14 +90,5 @@ tr:nth-child(even) {
 tr:hover {
     background-color: #f1f1f1;
 } 
-.search-bar {
-    margin-bottom: 20px;
-}
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;   
-    box-sizing: border-box;
-}
+
 </style>
