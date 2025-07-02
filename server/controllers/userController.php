@@ -17,7 +17,7 @@ class UserController {
          foreach ($users as $user) {
         if ($user['id'] == $newUser['id']) {
             http_response_code(400);
-            echo json_encode(['error' => 'ID ya existe']);
+            echo json_encode(['error' => 'Ya existe un usuario con esa identificación']);
             exit;
         }
     }
