@@ -32,13 +32,32 @@ const updateSearch = () => {
 
 <style scoped>
 .search-bar {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 .search-bar input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;   
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;   
+  box-sizing: border-box;
+  font-size: 16px;
 }
+
+@media (max-width: 768px) {
+  .search-bar input {
+    padding: 12px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    margin-bottom: 15px;
+  }
+  .search-bar input {
+    padding: 14px;
+    font-size: 16px;
+  }
+}
+
 </style>
