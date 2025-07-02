@@ -4,7 +4,8 @@ import type { User } from '../models/user';
 export const getUsers = async () => {
   const res = await fetch('/api/users');
   if (!res.ok) throw new Error('Error fetching users');
-  return res.json();
+  const data = await res.json();
+  return data;
 };
 
 export const saveUser = async (user: User) => {
