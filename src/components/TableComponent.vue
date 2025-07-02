@@ -1,8 +1,5 @@
 <template>
     <div class="scoped">
-       <div class="search-bar">
-           <input id="search" v-model="search" placeholder="Buscar por nombre" />
-       </div>
         <table>
         <thead>
             <tr>
