@@ -12,12 +12,28 @@
             </tr>
         </thead>
         <tbody>
+            <tr v-for="(user, index) in users" :key="index">
+                <td>{{ user.id }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.birthDate }}</td>
+                <td>{{ user.createdAt }}</td>
+                <td>{{ user.rol }}</td>
+            </tr>
         </tbody>
     </table>
+        <p v-if="users.length === 0">No hay usuarios disponibles.</p>
+        <p v-else>Total de usuarios: {{ users.length }}</p>
     </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
+import { ref } from 'vue';
+import { User} from '../models/user';
+
+
+const users = ref<User[]>([]);
+
 </script>
 
 <style >  
