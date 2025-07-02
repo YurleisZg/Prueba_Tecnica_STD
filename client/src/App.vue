@@ -14,6 +14,6 @@ import {RouterView} from 'vue-router';
     margin-top: 20px;
     text-align: center;
     font-size: 0.8em;
-    color: #999;
+    color: #7e7b7b;
 }
 </style>
