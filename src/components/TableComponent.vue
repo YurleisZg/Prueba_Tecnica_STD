@@ -26,7 +26,7 @@
         <p v-if="users.length === 0">No hay usuarios disponibles.</p>
         <p v-else>Total de usuarios: {{ users.length }}</p>
 
-        <button>Agregar Nuevo Usuario</button>
+        <button @click="gotoNewUser()">Agregar Nuevo Usuario</button>
     </div>
 </template>
 
@@ -35,11 +35,13 @@ import { ref, onMounted, computed } from 'vue';
 import type { User } from '../models/user';
 import { getUsers } from '../services/userService';
 import SearchBarComponent from './SearchBarComponent.vue';
+import { useRouter } from 'vue-router';
 
 const users = ref<User[]>([]);
 const sortField = ref<string>('');
 const ascending = ref<boolean>(true);
 const search = ref('');
+const router = useRouter();
 
 const sortBy = (field: string) => {
     if (sortField.value === field) {
@@ -68,6 +70,10 @@ const filteredUsers = computed(() => {
         user.name.toLowerCase().includes(search.value.toLowerCase()) 
     );
 });
+
+const gotoNewUser = () => {
+    router.push({ name: 'NewUser' });
+};
 
 </script>
 
