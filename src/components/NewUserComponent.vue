@@ -34,4 +34,26 @@ const saveUser = () => {
 </script>
 
 <style scoped>
+.scoped {
+    margin: 20px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button {
+    padding: 10px;
+    background-color: #104ac8;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 </style>
