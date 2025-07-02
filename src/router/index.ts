@@ -3,8 +3,8 @@ import TableComponent from '../components/TableComponent.vue';
 import NewUserComponent from '../components/NewUserComponent.vue';
 
 const routes = [
-  { path: '/', component: TableComponent },
-  { path: '/nuevo', component: NewUserComponent }
+  { path: '/', name: 'Table', component: TableComponent },
+  { path: '/nuevo', name: 'NewUser', component: NewUserComponent }
 ];
 
 export const router = createRouter({

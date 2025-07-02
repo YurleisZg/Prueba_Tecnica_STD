@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TableComponent from './components/TableComponent.vue'
+import {RouterView} from 'vue-router';
 </script>
 
 <template>
-  <TableComponent />
+  <RouterView />
 </template>
 
 <style scoped>
