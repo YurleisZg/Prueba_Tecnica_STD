@@ -6,14 +6,14 @@
 
 ## 🚀 Correr el proyecto
 
-### 1️⃣ Backend 
-cd server
-php -S localhost:8000 -t public
+### Backend 
+- cd server
+- php -S localhost:8000 -t public
 
 ---
 
-###2️⃣ Frontend
+### Frontend
 
-cd frontend
-npm install
-npm run dev
+- cd frontend 
+- npm install
+- npm run dev
