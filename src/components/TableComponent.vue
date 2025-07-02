@@ -18,7 +18,7 @@
                 <td>{{ user.email }}</td>
                 <td>{{ user.birthDate }}</td>
                 <td>{{ user.createdAt }}</td>
-                <td>{{ user.rol }}</td>
+                <td>{{ user.role }}</td>
             </tr>
         </tbody>
     </table>
@@ -29,8 +29,7 @@
 
 <script lang="ts" setup>
 import { ref } from 'vue';
-import { User} from '../models/user';
-
+import type { User } from '../models/user';
 
 const users = ref<User[]>([]);
 
