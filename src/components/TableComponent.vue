@@ -20,5 +20,5 @@
 <script lang="ts">
 </script>
 
-<style scoped>  
+<style scoped src="@/assets/styles/table.css">  
 </style>
