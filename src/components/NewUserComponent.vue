@@ -1,12 +1,12 @@
 <template>
 <div class="scoped">
-    <button @click="$router.push('/')" class="back-button">Regresar</button>
-    <h1 class="title">Agregar Nuevo Usuario</h1>
+    <button @click="$router.push('/')" class="back-button">← Regresar</button>
+    <h1 class="title"> Nuevo Usuario</h1>
     <p class="description">Por favor, complete el siguiente formulario para agregar un nuevo usuario.</p>
 
     <form @submit.prevent="saveNewUser">
         <label for="id">Identificación</label>
-        <input type="number" v-model="newUser.id" placeholder="Identificación" required/>
+        <input type="text" v-model="newUser.id" placeholder="Identificación" required/>
         <label for="name">Nombre</label>
         <input type="text" v-model="newUser.name" placeholder="Nombre" required />
         <label for="email">Correo Electrónico</label>
@@ -17,7 +17,7 @@
         <input type="date" v-model="newUser.createdAt" placeholder="Fecha de Creación" required />
         <label for="role">Cargo</label>
         <input type="text" v-model="newUser.role" placeholder="Cargo" required />
-        <button type="submit">Guardar Usuario</button>
+        <button type="submit">Guardar</button>
     </form>
 </div>
 </template>
@@ -28,7 +28,7 @@ import type { User } from '../models/user';
 import { saveUser } from '../services/userService';
 
 const newUser = ref<User>({
-    id: 0,
+    id: '',
     name: '',
     email: '',
     birthDate: '',
@@ -86,16 +86,18 @@ button {
 .title {
     font-size: 24px;
     text-align: center;
+    color: #104ac8;
     margin-bottom: 20px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .description {
     text-align: center;
     margin-bottom: 20px;
+    color:#242222;
 }
 .back-button {
     background-color: #fafafa;
-    color:  #104ac8;;
+    color:  #104ac8;
     font-weight: bold;
     border: none;
     padding: 10px 20px;
