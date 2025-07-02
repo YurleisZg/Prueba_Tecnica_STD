@@ -1,6 +1,6 @@
 <template>
     <div class="scoped">
-        <h1 class="title">Bienvenido!</h1>
+        <h1 class="title">¡Bienvenido!</h1>
         <p class="description">Aquí puedes ver la lista de usuarios y agregar nuevos.</p>
         <TableComponent />
         <div class="button-container">
@@ -41,10 +41,12 @@ const gotoNewUser = () => {
 
 .button-container {
     text-align: right;
+    padding-right: 20px;
 }
 button {
     padding: 10px 20px;
-    background-color: #104ac8;;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #104ac8;
     color: white;
     border: none;
     border-radius: 5px;

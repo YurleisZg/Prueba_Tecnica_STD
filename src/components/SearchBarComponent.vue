@@ -14,7 +14,7 @@ const props = defineProps({
   },
   placeholder: {
     type: String,
-    default: 'Buscar por nombre'
+    default: '🔍 Buscar por nombre'
   }
 });
 
