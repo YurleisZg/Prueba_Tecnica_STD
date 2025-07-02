@@ -28,10 +28,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import type { User } from '../models/user';
+import { getUsers } from '../services/userService';
 
 const users = ref<User[]>([]);
+
+onMounted(() =>{
+    users.value = getUsers();
+})
 
 </script>
 
