@@ -7,9 +7,9 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th>Fecha de Nacimiento <button class="button" @click.stop="sortBy('birthDate')">Ordenar mayor-menor</button></th>
-                <th>Fecha de Creación <button class="button" @click.stop="sortBy('createdAt')">Ordenar mayor-menor</button></th>
-                <th>Cargo <button class="button" @click.stop="sortBy('role')">Ordenar mayor-menor</button></th>
+                <th>Fecha de Nacimiento <button class="button" @click.stop="sortBy('birthDate')">Ordenar</button></th>
+                <th>Fecha de Creación <button class="button" @click.stop="sortBy('createdAt')">Ordenar</button></th>
+                <th>Cargo <button class="button" @click.stop="sortBy('role')">Ordenar</button></th>
             </tr>
         </thead>
         <tbody>
@@ -25,6 +25,9 @@
         <tfoot>
             <tr>
                 <td colspan="6" class="table-footer">Total Usuarios: {{ filteredUsers.length }}</td>
+            </tr>
+            <tr>
+                <td v-if="sortField" colspan="6" class="table-footer">Ordenado por: {{ sortField }} ({{ ascending ? 'Mayor a menor' : 'Menor a mayor' }})</td>
             </tr>
         </tfoot>
     </table>
@@ -108,10 +111,9 @@ tr:hover {
 .button {
     background-color: #f2f2f2d2;
     border-color: #f6f5f5d2;
-    padding: 3px 6px;
+    padding: 5px 10px;
     padding-top: 2px;
     border-radius: 5px;
-
     cursor: pointer;
 }
 .button:hover {
