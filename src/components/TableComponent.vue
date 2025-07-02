@@ -148,7 +148,7 @@ tr:hover {
     color: #ae2519;
     font-size: 1em;
     padding: 5px 12px;
-    padding-top: 6px;
+    padding-top: 4px;
     border-radius: 6px;
     cursor: pointer;
     float: right;
