@@ -30,7 +30,7 @@ const gotoNewUser = () => {
 }
 .title {
     font-size: 2em;
-    color: #333;
+    color: #104ac8;
     text-align: center;
 }
 .description {

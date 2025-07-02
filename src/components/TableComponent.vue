@@ -82,15 +82,16 @@ const filteredUsers = computed(() => {
 table {
     width: 100%;
     border-collapse: collapse;
+      text-align: center;
 }
 th, td {
     border: 1px solid #d6cbcb;
     padding: 12px;
+    font-size: 1em;
 }
 th {
-    background-color: #e7eaec;
+    background-color: #f1f3f6;
     padding: 10px;
-    text-align: left;
 }
 tr:nth-child(even) {
     background-color: #f9f9f9;
@@ -105,9 +106,8 @@ tr:hover {
     color: #1a1919;
 }
 .button {
-    background-color: #d2d3d4d2;
-    color: rgb(4, 4, 5);
-    border-color: #afb0b0d2;
+    background-color: #f2f2f2d2;
+    border-color: #f6f5f5d2;
     padding: 3px 6px;
     padding-top: 2px;
     border-radius: 5px;
@@ -115,11 +115,7 @@ tr:hover {
     cursor: pointer;
 }
 .button:hover {
-    background-color: #8fabc9;
-}
-.button:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(53, 77, 103, 0.5);
+    background-color: #f1f3f6;
 }
 
 </style>
