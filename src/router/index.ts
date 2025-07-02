@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import TableComponent from '..TableComponent.vue';
-import NewUserComponent from '..components/NewUserComponent.vue';
+import TableComponent from '../components/TableComponent.vue';
+import NewUserComponent from '../components/NewUserComponent.vue';
 
 const routes = [
   { path: '/', component: TableComponent },
