@@ -7,9 +7,9 @@
                 <th>Identificación</th>
                 <th>Nombre</th>
                 <th>Correo Electrónico</th>
-                <th @click="sortBy('birthDate')">Fecha de Nacimiento <button class="button">Ordenar mayor-menor</button> </th>
-                <th @click="sortBy('createdAt')">Fecha de Creación <button class="button">Ordenar mayor-menor</button> </th>
-                <th>Cargo</th>
+                <th @click="sortBy('birthDate')">Fecha de Nacimiento </th>
+                <th @click="sortBy('createdAt')">Fecha de Creación </th>
+                <th @click="sortBy('role')">Cargo</th>
             </tr>
         </thead>
         <tbody>
@@ -75,42 +75,7 @@ const filteredUsers = computed(() => {
 .scoped {
     padding: 80px;
     font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
-    overflow-x: auto;
-}
-
-@media (max-width: 768px) {
-    .scoped {
-        padding: 20px;
-    }
-    
-    table {
-        font-size: 14px;
-    }
-    
-    th, td {
-        padding: 6px 4px;
-        white-space: nowrap;
-    }
-    
-    .button {
-        padding: 2px 4px;
-        font-size: 12px;
-    }
-}
-
-@media (max-width: 480px) {
-    .scoped {
-        padding: 10px;
-    }
-    
-    table {
-        font-size: 12px;
-    }
-    
-    th, td {
-        padding: 4px 2px;
-    }
+    background-color: #ffffff;
 }   
 
 table {
@@ -119,10 +84,10 @@ table {
 }
 th, td {
     border: 1px solid #d6cbcb;
-    padding: 8px;
+    padding: 10px;
 }
 th {
-    background-color: #e8f2ff;
+    background-color: #e7eaec;
     text-align: left;
 }
 tr:nth-child(even) {
@@ -138,10 +103,11 @@ tr:hover {
     color: #424040;
 }
 .button {
-    background-color: #acc8e9d2;
+    background-color: #d2d3d4d2;
     color: rgb(4, 4, 5);
-    border-color: #6b7c90d2;
+    border-color: #afb0b0d2;
     padding: 3px 6px;
+    padding-top: 2px;
     border-radius: 5px;
 
     cursor: pointer;

@@ -23,9 +23,9 @@ const gotoNewUser = () => {
 <style scoped>
 .scoped {
     padding: 20px;
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border-radius: 8px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: auto;
 }
 .title {
