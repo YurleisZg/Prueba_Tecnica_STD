@@ -4,23 +4,23 @@
         "name": "Juan Perez",
         "email": "juan.perez@example.com",
         "birthDate": "2004-09-10",
-        "createdAt": "2025-06-30",
+        "createdAt": "2023-06-30",
         "role": "Desarrollador Sr"
     },
     {
-        "id": 4,
-        "name": "yo1",
-        "email": "alguien@example.com",
-        "birthDate": "2003-09-10",
-        "createdAt": "2025-07-02",
+        "id": "716616262",
+        "name": "Juana Garcia",
+        "email": "juana.garcia@example.com",
+        "birthDate": "1998-05-12",
+        "createdAt": "2025-06-25",
         "role": "Jefe"
     },
     {
-        "id": "716616262",
-        "name": "Juana",
-        "email": "yurleis@gmail.com",
-        "birthDate": "1998-05-12",
-        "createdAt": "2025-08-25",
+        "id": "287222",
+        "name": "Doe",
+        "email": "doe@example.com",
+        "birthDate": "2000-04-12",
+        "createdAt": "2012-04-12",
         "role": "Jefe"
     }
 ]
