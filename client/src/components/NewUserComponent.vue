@@ -37,10 +37,14 @@ const newUser = ref<User>({
 });
 
 
-const saveNewUser = () => {
-    saveUser(newUser.value);
-    alert('Usuario guardado exitosamente');
-    location.reload();
+const saveNewUser = async () => {
+    try {
+        await saveUser(newUser.value);
+        alert('Usuario guardado exitosamente');
+        location.reload();
+    } catch (error) {
+        alert(error.message);
+    }
 };
 </script>
 

@@ -17,7 +17,7 @@ export const saveUser = async (user: User) => {
 
    if (res.status === 409) {
     const error = await res.json();
-    throw new Error(error.error || 'ID duplicado');
+    throw new Error(`Error: ${error.message}`);
   }
 
   if (!res.ok) {
