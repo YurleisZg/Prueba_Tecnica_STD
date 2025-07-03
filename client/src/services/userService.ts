@@ -15,10 +15,11 @@ export const saveUser = async (user: User) => {
     body: JSON.stringify(user),
   });
 
-   if (res.status === 409) {
-    const error = await res.json();
-    throw new Error(`Error: ${error.message}`);
-  }
+  if (res.status === 400) {
+  const error = await res.json();
+  throw new Error(`Error: ${error.error}`);
+}
+
 
   if (!res.ok) {
     throw new Error('Error al guardar el usuario');

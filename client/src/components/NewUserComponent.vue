@@ -42,8 +42,8 @@ const saveNewUser = async () => {
         await saveUser(newUser.value);
         alert('Usuario guardado exitosamente');
         location.reload();
-    } catch (error) {
-        alert(error.message);
+    } catch (err) {
+        alert((err as Error).message || 'Error al guardar el usuario');
     }
 };
 </script>

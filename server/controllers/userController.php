@@ -24,7 +24,7 @@ class UserController {
         $users[] = $newUser;
 
         file_put_contents($this->dataFile, json_encode($users, JSON_PRETTY_PRINT));
-
+         header('Content-Type: application/json');
         jsonResponse($users);
     }
 }
